@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oaltun <oaltun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 13:42:17 by oaltun            #+#    #+#             */
-/*   Updated: 2022/11/16 13:42:18 by oaltun           ###   ########.fr       */
+/*   Created: 2022/11/16 15:28:32 by oaltun            #+#    #+#             */
+/*   Updated: 2022/11/16 15:28:33 by oaltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*str1;
 	unsigned char	*str2;
@@ -25,6 +25,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 			return (*str1 - *str2);
 		if (*str1++ != *str2++)
 			return (*--str1 - *--str2);
+		printf("%zu\n", n);
 	}
 	return (0);
 }
