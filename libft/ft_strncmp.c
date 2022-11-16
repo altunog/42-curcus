@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	int	comparison;
 
@@ -28,13 +28,4 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 		s2++;
 	}
 	return (comparison);
-}
-#include <stdio.h>
-#include <string.h>
-int main() {
-	char s1[] = "";
-	char s2[] = "";
-
-	printf("ft -> %d\n", ft_strncmp(s1, s2, sizeof(s1)));
-	printf("og -> %d\n", strncmp(s1, s2, sizeof(s1)));
 }
