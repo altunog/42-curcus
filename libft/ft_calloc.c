@@ -19,7 +19,7 @@ void	*ft_calloc(size_t count, size_t size)
 	mem = malloc(count * size);
 	if (!mem)
 		return (NULL);
-	ft_bzero((void *)mem, count * size);
+	ft_bzero(mem, count * size);
 
-	return ((void *)mem);
+	return (mem);
 }
