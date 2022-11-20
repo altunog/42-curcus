@@ -32,7 +32,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(str, s1, len + 1);
 	return (str);
 }
-#include <stdio.h>
-int main() {
-	printf("-%s\n", ft_strtrim(" hello ", " "));
-}
