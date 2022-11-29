@@ -12,27 +12,31 @@
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+int ft_printf(const char *format, ...)
 {
-	va_list	args;
-	int		total_len;
+	va_list args;
+	int total_len;
 
 	total_len = 0;
 	va_start(args, format);
-	while(*format)
+	while (*format)
 	{
 		if (*format == '%')
 		{
 			if (*++format == 'c')
 				total_len += ft_putchar(va_arg(args, int));
+			else if (*format == 's')
+				total_len += ft_putstr(va_arg(args, const char *));
+			else if (*format == 'p')
+				continue;
 			else
 			{
 				total_len += ft_putchar(*--format);
-			}	
+			}
 		}
 		else
 			total_len += ft_putchar(*format);
-			
+
 		format++;
 	}
 
@@ -40,6 +44,8 @@ int	ft_printf(const char *format, ...)
 	return (total_len);
 }
 
-int main() {
-	ft_printf("hell%c w%crld ", 'o', 'o');
+int main()
+{
+	ft_printf("putchar\t: hell%c w%crld\n", 'o', 'o');
+	ft_printf("putstr\t: hell%c %s\n", 'o', "world");
 }
