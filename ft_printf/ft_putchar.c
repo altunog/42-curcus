@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oaltun <oaltun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 12:48:49 by oaltun            #+#    #+#             */
-/*   Updated: 2022/11/28 12:48:50 by oaltun           ###   ########.fr       */
+/*   Created: 2022/11/29 12:47:24 by oaltun            #+#    #+#             */
+/*   Updated: 2022/11/29 12:47:25 by oaltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF
-# define FT_PRINTF
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+#include "ft_printf.h"
 
-int	ft_putchar(int c);
-int	ft_putstr(const char *s);
-int	ft_putptr(void *p);
-int	ft_putnbr_d(int n);
-int	ft_putnbr_i(int n);
-int	ft_putnbr_u(unsigned int n);
-int	ft_putnbr_x(int n);
-int	ft_printf(const char *format, ...);
-int	ft_specify(char *str, char specifier);
+int	ft_putchar(int c)
+{
+	unsigned char	*ch_ptr;
+	unsigned char	ch;
+	int				len;
 
-#endif
+	ch_ptr = (unsigned char *)malloc(sizeof(char));
+	if (!ch_ptr)
+		return (0);
+	ch = (unsigned char)c;
+	*ch_ptr = ch;
+	len = write(1, ch_ptr, 1);
+	free(ch_ptr);
+	return (len);
+}
