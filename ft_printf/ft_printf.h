@@ -18,7 +18,7 @@
 
 int	ft_putchar(int c);
 int	ft_putstr(const char *s);
-int	ft_putptr(void *p);
+int	ft_putptr(unsigned long long ptr);
 int	ft_putnbr_d(int n);
 int	ft_putnbr_i(int n);
 int	ft_putnbr_u(unsigned int n);

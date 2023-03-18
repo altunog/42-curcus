@@ -12,9 +12,27 @@
 
 #include "ft_printf.h"
 
-int	ft_putptr(void *p)
+static int	ft_putptr_chr(unsigned long long ptr)
 {
-	ft_putchar('0');
-	ft_putchar('x');
-	
+	char	*hex;
+	int		len_ptr;
+
+	hex = "0123456789abcdef";
+	len_ptr = 0;
+	if (ptr > 15)
+		len_ptr += ft_putptr_chr(ptr / 16);
+	len_ptr += ft_putchar(hex[ptr % 16]);
+
+	return (len_ptr);
+}
+
+int	ft_putptr(unsigned long long ptr)
+{
+	int		len;
+
+	len = 0;
+	len += write(1, "0x", 2);
+	len += ft_putptr_chr(ptr);
+
+	return (len);
 }
