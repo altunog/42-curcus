@@ -22,7 +22,6 @@ static int	ft_putptr_chr(unsigned long long ptr)
 	if (ptr > 15)
 		len_ptr += ft_putptr_chr(ptr / 16);
 	len_ptr += ft_putchar(hex[ptr % 16]);
-
 	return (len_ptr);
 }
 
@@ -33,6 +32,5 @@ int	ft_putptr(unsigned long long ptr)
 	len = 0;
 	len += write(1, "0x", 2);
 	len += ft_putptr_chr(ptr);
-
 	return (len);
 }

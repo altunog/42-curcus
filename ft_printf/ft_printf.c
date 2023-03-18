@@ -51,5 +51,4 @@ int main()
 	ft_printf("putchar\t: hell%c w%crld\n", 'o', 'o');
 	ft_printf("putstr\t: hell%c %s\n", 'o', "world");
 	ft_printf("putptr\t: a =  %p\n", &a);
-	printf("printf\t: a =  %p\n", &a);
 }
